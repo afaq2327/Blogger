@@ -23,6 +23,9 @@ var blogSchema = new mongoose.Schema({
 var blog = mongoose.model('blog', blogSchema);
 
 //////////////////////////////////////////////////////////////////////////////ROUTES
+app.get("/", function(req, res) {
+    res.redirect("/blogs");
+});
 
 app.get("/blogs", function(req, res) {
     blog.find({}, function(err, blogs) {
