@@ -2,8 +2,8 @@ var bodyParser = require('body-parser');
 expressSanitizer = require('express-sanitizer');
 methodOverride = require('method-override');
 mongoose = require('mongoose');
-// mongoose.connect("mongodb://localhost/BlogApp", { useNewUrlParser: true })
-mongoose.connect("mongodb+srv://Afaq:AFaq2327.@cluster0-yaaim.mongodb.net/test?retryWrites=true&w=majority");
+mongoose.connect("mongodb://localhost/BlogApp", { useNewUrlParser: true })
+    // mongoose.connect("mongodb+srv://Afaq:ahmed2327.@cluster0-yaaim.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true });
 
 express = require('express');
 app = express();
