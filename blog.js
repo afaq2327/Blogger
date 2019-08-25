@@ -9,8 +9,8 @@ var bodyParser = require('body-parser'),
 console.log(process.env.DATABASEURL);
 // mongoose.connect("mongodb://localhost/BlogApp", { useNewUrlParser: true })
 
-mongoose.connect("mongodb+srv://afaq:ahmed2327.@blogapp-uro2w.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true });
-
+// mongoose.connect("mongodb+srv://afaq:ahmed2327.@blogapp-uro2w.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true });
+mongoose.connect(process.env.DATABASEURL);
 app = express();
 
 app.set("view engine", "ejs");
