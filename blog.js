@@ -1,11 +1,13 @@
-var bodyParser = require('body-parser');
-expressSanitizer = require('express-sanitizer');
-methodOverride = require('method-override');
-mongoose = require('mongoose');
-mongoose.connect("mongodb://localhost/BlogApp", { useNewUrlParser: true })
-    // mongoose.connect("mongodb+srv://Afaq:ahmed2327.@cluster0-yaaim.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true });
+var bodyParser = require('body-parser'),
+    expressSanitizer = require('express-sanitizer'),
+    methodOverride = require('method-override'),
+    mongoose = require('mongoose'),
+    express = require('express');
 
-express = require('express');
+// mongoose.connect("mongodb://localhost/BlogApp", { useNewUrlParser: true })
+
+mongoose.connect("mongodb+srv://afaq:ahmed2327.@blogapp-yaaim.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true });
+
 app = express();
 
 app.set("view engine", "ejs");
@@ -95,6 +97,6 @@ app.delete("/blogs/:id", function(req, res) {
 });
 //////////////////////////////////////////////////////////////////////////////
 
-app.listen(process.env.PORT, function() {
+app.listen(3000, function() {
     console.log("server is listening at port 3000...");
 });
