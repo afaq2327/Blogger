@@ -4,9 +4,12 @@ var bodyParser = require('body-parser'),
     mongoose = require('mongoose'),
     express = require('express');
 
+
+
+console.log(process.env.DATABASEURL);
 // mongoose.connect("mongodb://localhost/BlogApp", { useNewUrlParser: true })
 
-mongoose.connect("mongodb+srv://afaq:ahmed2327.@blogapp-yaaim.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true });
+mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true });
 
 app = express();
 
@@ -97,6 +100,6 @@ app.delete("/blogs/:id", function(req, res) {
 });
 //////////////////////////////////////////////////////////////////////////////
 
-app.listen(process.env.PORT, function() {
+app.listen(process.env.PORT, process.env.IP, function() {
     console.log("server is listening at port 3000...");
 });
